@@ -33,14 +33,12 @@ Abbreviations for datasets involved
 | `scripts/01_preprocess_counts_no.R` | Perform standard RNA-seq preprocessing by converting raw sequencing counts into a normalized, log-transformed expression matrix |
 | `scripts/02_CIBERSORT_pipeline_no.R` | A cellular deconvolution pipeline to estimate the proportions of specific AML (Acute Myeloid Leukemia) cell states within bulk RNA-seq samples. <br/> Modified version that return QC |
 | `scripts/03_ModuleScore_trajectory_no.R` | Calculates differentiation module scores to quantify stemness or mature-like for each AML sample and then orders them into a linear differentiation trajectory. |
-| `scripts/04_RNA_heatmap.R` | runs ida prediction, but also calculates the actual DSS, HR, IDAComboscore |
-| `scripts/Methylation_processing.R` | Standard parameters used for plots |
+| `scripts/04_RNA_heatmap.R` | |
+| `scripts/Methylation_processing.R` |  |
 
-## Analysis
+## Plotting
 
-R objects, python objects
-
-| Analysis/Code | Remarks | Files | 
+| Code for Plotting | Remarks | Files | 
 | --- | --- | --- |
 | `scripts/01_preprocess_counts_no.R`  | Perform standard RNA-seq preprocessing by converting raw sequencing counts into a normalized, log-transformed expression matrix | Supp Tables <br/> `output/Expression_LAML_707_log2RPM.txt` <br/> | Fig 1 <br/> SuppFig 1 <br/> Fig 2 <br/> SuppFig 2 |
 | `scripts/02_CIBERSORT_pipeline_no.R`  | A cellular deconvolution pipeline to estimate the proportions of specific AML (Acute Myeloid Leukemia) cell states within bulk RNA-seq samples. | Supp Tables <br/> `output/baml_IDA_prediction.csv` <br/> `output/combine_baml_fp_IDA_prediction.csv` <br/> Other tables <br/> `output/supp/baml_woOSHU_IDA_prediction.csv` <br/> `output/supp/fp_full_IDA_prediction.csv` <br/> `output/supp/fp_commondrug_IDA_prediction.csv` <br/> Other rds <br/> (folder) `output/supp/synergy/` | Figure 3 <br/> SuppFig 3 <br/> SuppFig 4 |
