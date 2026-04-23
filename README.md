@@ -28,7 +28,7 @@ Abbreviations for datasets involved
 
 ## Functions - Methylation Analysis
 
-| Functions | Remarks | Files |
+| Scripts | Remarks | Files |
 | --- | --- | --- |
 | `scripts/01_preprocess_counts.R` | Perform standard RNA-seq preprocessing by converting raw sequencing counts into a normalized, log-transformed expression matrix | Inputs: <br/> `input/beataml_waves1to4_counts_dbgap.txt` <br/><br/> Outputs: <br/> `output/Expression_BAML_707_log2RPM.txt` |
 | `scripts/02_CIBERSORT_pipeline.R` | A cellular deconvolution pipeline to estimate the proportions of specific AML (Acute Myeloid Leukemia) cell states within bulk RNA-seq samples. <br/> Modified version that return QC | Inputs: <br/> `output/BAML_Normalized.txt` <br/> `input/AML_signature_matrix_M.txt` <br/><br/> Outputs: <br/> `output/CIBERSORT_mixture_RPM.txt` <br/> `output/CIBERSORT_AML_results.csv` <br/> `output/CIBERSORT_AML_malignant_normalized.csv` <br/> `output/AML_dominant_cell_state.csv` <br/><br/> Plots: <br/> `plots/CIBERSORT_AML_heatmap.pdf` <br/> `plots/CIBERSORT_AML_PCA.pdf` |
@@ -47,4 +47,6 @@ Abbreviations for datasets involved
 
 - Beat AML drug combo - bamlcombo; bamlcombi; oshu
 
+| Script | Remarks | Files |
+| --- | --- | --- |
 | `BiomarkerIdentification.R` | Processes AML expression data using Seurat (PCA, clustering, UMAP). Integrates clinical response metadata, calculates an "Inflammation" module score, and generates a targeted Z-scored heatmap comparing Complete Responders (CR) and Non-Responders (NR). | Inputs: <br/> `Merged_AML_data.csv` <br/> `response.csv` <br/><br/> Plots: <br/> `plots/Inflammatory_Genes.pdf` <br/> SuppFig 7 f-g |
