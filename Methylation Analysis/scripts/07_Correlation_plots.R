@@ -5,6 +5,8 @@
 
 message("Generating correlation plots")
 
+graphics.off()
+
 # library(tidyverse)
 # library(ggplot2)
 # library(ggridges)

@@ -4,6 +4,7 @@
 ############################################################
 
 message("Generating RNA trajectory heatmap")
+graphics.off()
 
 # library(pheatmap)
 # library(tidyverse)
@@ -98,7 +99,7 @@ ann_colors <- list(
 # ---------------------------------------------------------
 # 8. Plot
 # ---------------------------------------------------------
-pdf("plots/RNA_Trajectory_Heatmap.pdf", width = 20, height = 12)
+pdf("plots/RNA_Heatmap.pdf", width = 20, height = 12)
 
 
 pheatmap(

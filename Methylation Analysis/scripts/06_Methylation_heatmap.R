@@ -7,6 +7,8 @@ message("Processing methylation data")
 # library(tidyverse)
 # library(pheatmap)
 
+graphics.off()
+
 # ---------------------------------------------------------
 # 1. Load methylation Expression Data
 # ---------------------------------------------------------
@@ -96,7 +98,7 @@ ann_colors <- list(
   Score = colorRampPalette(c("#e5f5e0", "#3311aa")) (100)
 )
 
-pdf("plots/Methylation_Trajectory_Heatmap.pdf", width = 20, height = 12)
+pdf("plots/Methylation_Heatmap.pdf", width = 20, height = 12)
 
 pheatmap(
   mat = meth_z,

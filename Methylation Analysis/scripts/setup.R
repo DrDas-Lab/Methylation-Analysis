@@ -8,7 +8,8 @@ packages <- c(
   "e1071",
   "preprocessCore",
   "matrixStats",
-  "IlluminaHumanMethylationEPICanno.ilm10b4.hg19"
+  "IlluminaHumanMethylationEPICanno.ilm10b4.hg19",
+  "org.Hs.eg.db"
 )
 
 for (p in packages) {

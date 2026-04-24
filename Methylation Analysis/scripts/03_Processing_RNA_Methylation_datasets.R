@@ -18,7 +18,7 @@ rna <- read.table("output/CIBERSORT_mixture_RPM.txt",
 # ---------------------------------------------------------
 # 2. Load methylation beta values
 # ---------------------------------------------------------
-meth_raw <- read.csv("input/GSE159907_BetaValues_BA_mapped_clean.csv",
+meth_raw <- read.csv("input/MethylationBetaValues_clean.csv",
                      check.names = FALSE)
 
 colnames(meth_raw)[1] <- "CpG_ID"
@@ -59,7 +59,7 @@ rownames(meth_gene) <- meth_gene$UCSC_RefGene_Name
 meth_gene$UCSC_RefGene_Name <- NULL
 
 # ---------------------------------------------------------
-# 4. RNA and Methylation filtering - Based on Figure 6F
+# 4. RNA and Methylation filtering - Based on Figure 6D
 # ---------------------------------------------------------
 program_list <- list(
   "mature myeloid" = c("MPO","ELANE","AZU1","CTSG","SELL","CD36","SRGN","MNDA","CX3CR1","FCGR3A","MAFB","CD14","FCN1"),

@@ -4,9 +4,10 @@
 # library(data.table)
 # library(org.Hs.eg.db)
 
-output_file <- "output/Expression_BAML_707_log2RPM.txt"
+output_file <- "output/BAML_Normalized.txt"
+req_file <- "input/BAML_Normalized.txt"
 
-if (file.exists(output_file)) {
+if (file.exists(req_file)) {
   
   message(sprintf("File '%s' already exists. Skipping preprocessing.", output_file))
   
@@ -16,28 +17,16 @@ if (file.exists(output_file)) {
   
 
   counts <- fread("input/beataml_waves1to4_counts_dbgap.txt", data.table = FALSE)
-  rownames(counts) <- counts[, 1]
+  gene_ids <- counts[, 1]
+  count_matrix <- counts[, -1]
   counts_matrix <- as.matrix(counts[, sapply(counts, is.numeric)])
+  rownames(count_matrix) <- gene_ids
   
   lib_size <- colSums(counts_matrix)
   rpm <- t(t(counts_matrix) / lib_size) * 1e6
   log2rpm <- log2(rpm + 1)
   
 
-  message("Mapping Ensembl IDs to Gene Symbols...")
-  clean_ensembl <- gsub("\\..*", "", rownames(log2rpm))
-  
-  gene_symbols <- mapIds(
-    org.Hs.eg.db,
-    keys = clean_ensembl,
-    column = "SYMBOL",
-    keytype = "ENSEMBL",
-    multiVals = "first"
-  )
-
-  gene_symbols[is.na(gene_symbols)] <- clean_ensembl[is.na(gene_symbols)]
-  rownames(log2rpm) <- make.unique(gene_symbols)
-  
   write.table(
     log2rpm,
     output_file,

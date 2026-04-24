@@ -5,13 +5,14 @@
 ############################################################
 
 message("Running CIBERSORT AML pipeline")
+graphics.off()
 
 # ---------------------------------------------------------
 # 1. Load required libraries
 # ---------------------------------------------------------
-library(tidyverse)
-library(pheatmap)
-library(ggplot2)
+# library(tidyverse)
+# library(pheatmap)
+# library(ggplot2)
 
 # ---------------------------------------------------------
 # 2. Source CIBERSORT function
@@ -22,7 +23,7 @@ source("CIBERSORT.R")
 # 3. Load log2RPM expression
 # ---------------------------------------------------------
 expr_log <- read.table(
-  "output/Expression_BAML_707_log2RPM.txt",
+  "input/BAML_Normalized.txt",
   header = TRUE,
   sep = "\t",
   row.names = 1,
