@@ -3,7 +3,7 @@ Methylation analysis & Biomarker identification
 
 ## Setup - Methylation Analysis
 
-R version: 4.5.3, renv 1.0.11
+R version: 4.5.3, renv 1.2.2
 
 Refer to `init.R` for specific versions of packages used. To run the pipeline open the `pipeline.Rproj` file and initiate as follows
 
