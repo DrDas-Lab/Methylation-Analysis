@@ -13,7 +13,7 @@ renv::activate()
 renv::restore()
 
 # Run the pipeline
-source('methylation_pipeline.R')
+source('run_pipeline.R')
 ```
 
 ### Data
